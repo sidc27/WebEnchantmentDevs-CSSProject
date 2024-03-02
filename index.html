@@ -1,0 +1,107 @@
+
+<!-- saved from url=(0053)https://codd.cs.gsu.edu/~yliu117/Project/P1/Home.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+<link rel="icon" href="./index_files/favicon.png">
+<link rel="stylesheet" type="text/css" href="./index_files/P1.css">
+<style>
+
+#level_list {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 20%;
+	left:-50%;
+	color:gold;
+    background-color: black;
+    border: 1px solid black;
+	    animation: fadeOut 0s forwards;
+
+}
+
+#level_list:target {
+    transform: translateX(150%);
+    animation: fadeIn 0.1s forwards;
+}
+
+#goback1:target #level_list {
+    animation: fadeOut 0s forwards;
+    transform: translateX(-150%);
+}
+
+#goback2:target #credit {
+    animation: fadeOut 0s forwards;
+    transform: translateX(-150%);
+}
+
+#credit:target {
+    transform: translateX(150%);
+    animation: fadeIn 0.1s forwards;
+}
+
+#credit {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+	left:-50%;
+    top: 20%;
+	color:gold;
+    background-color: black;
+    border: 1px solid black;
+		    animation: fadeOut 0s forwards;
+
+}
+
+button {
+    max-width: 100px;
+    max-height: 50px;
+    border: none;
+    opacity: 0.85;
+}
+
+</style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="">
+    <img src="./index_files/Canyon.png" style="width:100%; height:100%; position: absolute; z-index: -1; min-width:1300px;">
+    <div style="position: fixed; width: 50%; height: 50%; text-align: center; justify-content: center; align-items: center; top: 20%; left: 25%; display: flex; flex-direction: column;">
+        <img src="./index_files/Title.png" style="width: 50%;">
+        <button onclick="location.href='./level1.html';" style="font-size: 10px;">Start Game</button>
+        <button onclick="location.href=&#39;#credit&#39;" style="font-size: 10px;">Credit</button>
+        <button onclick="location.href=&#39;#level_list&#39;" style="font-size: 10px;">Pick Level</button>
+    </div>
+    <<div id="credit">
+        <button onclick="location.href='#goback1'" style="font-size: 10px;">Back</button><br>
+        <center>Project name: Legend's tale</center>
+        <center>Kaleb Evory---Leader</center>
+        <center>Sidratul Chowdhury---Coder/Programmer</center>
+        <center>Yikai---Designer</center><br>
+        <center>Description:This is a story of how a hero travel thought the most Danger forest in this land</center>
+     </div>
+    <div id="level_list">
+        <button onclick="location.href=&#39;#goback2&#39;" style="font-size: 10px;">Back</button>
+        <center><a href="./level1.html">level 1</a></center><br>
+        <center><a href="./level2.html">level 2</a></center><br>
+        <center><a href="./level3.html">level 3</a></center><br>
+    </div>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

@@ -1,0 +1,409 @@
+body { 
+	margin: 0;
+	padding: 0;
+	display: flex;
+	--state: hidden;
+}
+
+.display {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+
+.background { 
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	position: absolute;
+}
+
+.enemy { 
+	width: 20vw;
+	height: 40vh;
+	z-index: 2;
+	left: 40vw;
+	bottom: 10vh;
+	position: absolute;
+}
+
+#gobl {
+	position: absolute;
+	left: 20vw;
+	bottom: 15vh;
+}
+
+#gobr {
+	position: absolute;
+	left: 60vw;
+	bottom: 15vh;
+}
+
+.enemy.interact > img { 
+	width: 20vw;
+	height: 40vh;
+	animation-name: breath;
+	animation-duration: 4s; 
+	animation-iteration-count: infinite;
+}
+
+.enemy.interact > img:hover { 
+	width: 20vw;
+	height: 40vh;
+	animation-name: happy;
+	animation-duration: 4s; 
+	animation-iteration-count: infinite;
+}
+
+.enemy.passable > img { 
+	width: 20vw;
+	height: 40vh;
+	animation-name: happy, vanish;
+	animation-delay: 0s, 4s;
+	animation-duration: 4s, 2s; 
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1, 1;
+}
+
+.enemy.moveR { 
+	width: 20vw;
+	height: 40vh;
+	animation-name: moveR;
+	animation-duration: 4s; 
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+
+.enemy.moveR > img { 
+	width: 20vw;
+	height: 40vh;
+	animation-name: moveR, breath;
+	animation-duration: 4s; 
+	animation-delay: 4s;
+	animation-iteration-count: infinite;
+}
+
+.enemy.moveL { 
+	position: absolute;
+	width: 20vw;
+	height: 40vh;
+	animation-name: moveL;
+	animation-duration: 4s; 
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+
+.enemy.moveL > img { 
+	position: absolute;
+	width: 20vw;
+	height: 40vh;
+	animation-name: breath;
+	animation-duration: 4s; 
+	animation-delay: 6s;
+	animation-iteration-count: infinite;
+}
+
+.enemy.arrive > img { 
+	width: 20vw;
+	height: 40vh;
+	animation-name: appear, breath;
+	animation-duration: 2s, 4s; 
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1, infinite;
+}
+
+.enemy.first > img { 
+	width: 20vw;
+	height: 40vh;
+	opacity: 0.00;
+	animation-name: appear, breath;
+	animation-duration: 2s, 4s; 
+	animation-delay: 17s, 0s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1, infinite;
+}
+
+.enemy.final > img { 
+	width: 20vw;
+	height: 40vh;
+	animation-name: breath, vanish;
+	animation-duration: 4s, 2s;
+	animation-delay: 0s, 6s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+
+.emote { 
+	width: 10vw;
+	z-index: 2;
+	left: 50vw;
+	top: 35vh;
+	transform: rotate(45deg);
+	position: absolute;
+	visibility: var(--state);
+	animation-name: laugh;
+	animation-duration: 4s; 
+	animation-iteration-count: 1;
+}
+
+.slash {
+	width: 10vw;
+	heigth: 10vh;
+	position: absolute;
+	z-index: 3;
+	left: 44vw;
+	top: 60vh;
+	opacity: 0;
+	animation-name: appear, disappaer;
+	animation-duration: 1s, 1s; 
+	animation-delay: 5s, 6s; 
+	animation-iteration-count: 1;
+}
+
+.text { 
+	width: 75vw;
+	height: 15vh;
+	z-index: 4;
+	left: 10vw;
+	bottom: 3vh;
+	position: absolute;
+	border-width: 2vw;
+	border-style: solid; 
+	border-image-source: url(border.png); 
+	border-image-slice:  120 fill; 
+	border-image-repeat: round;
+	background-color: rgba(204, 255, 255, 0.5); 
+	border-radius: 20px;
+	padding: 5px;
+	color: black;
+	font-size: 1.5vw;
+	line-height: 3.5vh;
+}
+
+.select {
+	margin: 5px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	font-size: 1.5vw;
+	line-height: 3.5vh;
+}
+
+.option {
+	background-color: rgba(0,0,0,0);
+	border: solid 2px gray;
+	border-radius: 4px;
+}
+
+.option:hover {
+	background-color: #06B48B;
+	border: solid 2px #005249;
+}
+
+.option > a {
+	color: black;
+	font-size: 1.5vw;
+	line-height: 3.5vh;
+}
+
+.option > a:hover:after {
+  content:" >>";
+}
+
+.defeat {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background-color: black;
+}
+
+.defeat > p {
+	left: 30vw;
+	top: 5vh;
+	position: absolute;
+	color: red;
+	font-size: 10vw;
+	line-height: 10vh;
+	animation-name: appear;
+	animation-duration: 2s; 
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+
+.defeat_text {
+	width: 75vw;
+	height: 15vh;
+	z-index: 4;
+	left: 10vw;
+	bottom: 3vh;
+	position: absolute;
+	border-width: 2vw;
+	border-style: solid; 
+	border-image-source: url(border.png); 
+	border-image-slice:  120 fill; 
+	border-image-repeat: round;
+	background-color: rgba(204, 255, 255, 0.5); 
+	border-radius: 20px;
+	padding: 5px;
+	color: black;
+	font-size: 1.5vw;
+	line-height: 3.5vh;
+}
+
+@keyframes breath {
+	0% {
+		transform: scaleY(1.00);
+	}
+	25% {
+		transform: scaleY(1.05);
+	}
+	50% {
+		transform: scaleY(1.00);
+	}
+	75% {
+		transform: scaleY(1.05);
+	}
+	100% {
+		transform: scaleY(1.00);
+	}
+}
+
+@keyframes happy {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(5deg);
+	}
+	50% {
+		transform: rotate(-5deg);
+	}
+	75% {
+		transform: rotate(5deg);
+	}
+	100% {
+		transform: rotate(-5deg);
+	}
+}
+
+@keyframes laugh {
+	from {
+		--state: visible;
+	}
+	to {
+		--state: hidden;
+	}
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0.00;
+	}
+	25% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 0.50;
+	}
+	75% {
+		opacity: 0.75;
+	}
+	100% {
+		opacity: 1.00;
+	}
+}
+
+@keyframes vanish {
+	0% {
+		opacity: 1.00;
+	}
+	25% {
+		opacity: 0.75;
+	}
+	50% {
+		opacity: 0.50;
+	}
+	75% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 0.00;
+	}
+}
+
+@keyframes moveL {
+	from { 
+		transform: translate(0vw, 0vw);
+	}
+	to {
+		transform: translate(-20vw, 0vw);
+	}
+}
+
+@keyframes moveR {
+	from { 
+		transform: translate(0vw, 0vw);
+	}
+	to {
+		transform: translate(20vw, 0vw);
+	}
+}
+/*Yukai Lui's Code with Slight Modifications */
+.overlay {
+	width: 100vw;
+	height: 100vh;
+	z-index: 5;
+	position: absolute;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: fadeIn 0s forwards, fadeOut 8s forwards 10s; 
+}
+
+.intro {
+	top: 30vh;
+	max-height: 50vh;
+	font-size: 1.5vw;
+	line-height: 3.5vh;
+	display: flex;
+	justify-content: center;  
+	text-align: center;
+	color: gold;
+	width: 50vw;
+	opacity: 0; 
+	overflow: hidden; 
+	animation: revealAnimation 8s ease-in forwards 0s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes revealAnimation {
+  0% {
+    height: 0; 
+    opacity: 0; 
+  }
+  100% {
+    height: 100vh;
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+	visibility: hidden;
+  }
+}

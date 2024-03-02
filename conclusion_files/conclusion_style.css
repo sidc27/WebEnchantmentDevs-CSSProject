@@ -1,0 +1,124 @@
+body { 
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.display {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+
+.background { 
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	position: absolute;
+}
+
+#congrats {
+	font-size: 3vw;
+	line-height: 3vh;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: center;
+}
+
+#message {
+	position: absolute;
+	top: 15vw;
+}
+
+.trophy { 
+	width: 1vw;
+	height: 5vh;
+	z-index: 4;
+	position: absolute;
+	left: 32vw;
+}
+
+.trophy > img { 
+	width: 10vw;
+	height: 15vh;
+	z-index: 4;
+	position: absolute;
+}
+
+.trophy > img:hover { 
+	width: 10vw;
+	height: 15vh;
+	animation-name: shake;
+	animation-duration: 4s; 
+	animation-iteration-count: infinite;
+}
+
+.text { 
+	width: 75vw;
+	height: 45vh;
+	z-index: 4;
+	left: 10vw;
+	bottom: 25vh;
+	position: absolute;
+	border-width: 2vw;
+	border-style: solid; 
+	border-image-source: url(border.png); 
+	border-image-slice:  120 fill; 
+	border-image-repeat: round;
+	background-color: rgba(204, 255, 255, 0.5); 
+	border-radius: 20px;
+	padding: 5px;
+	color: black;
+	font-size: 1.5vw;
+	line-height: 3.5vh;
+	text-align: top;
+}
+
+.select {
+	margin: 5px;
+	position: absolute;
+	left: 31vw;
+	bottom: 0;
+	font-size: 1.5vw;
+	line-height: 3.5vh;
+}
+
+.option {
+	align: center;
+	background-color: rgba(0,0,0,0);
+	border: solid 2px gray;
+	border-radius: 4px;
+}
+
+.option:hover {
+	background-color: #06B48B;
+	border: solid 2px #005249;
+}
+
+.option > a {
+	color: black;
+	font-size: 1.5vw;
+	line-height: 3.5vh;
+}
+
+.option > a:hover:after {
+  content:" >>";
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(5deg);
+	}
+	50% {
+		transform: rotate(-5deg);
+	}
+	75% {
+		transform: rotate(5deg);
+	}
+	100% {
+		transform: rotate(-5deg);
+	}
+}

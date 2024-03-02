@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url(background4.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+ 
+  }
+ 
+ .fullbackground{
+    position: relative; 
+    z-index:-10;
+    
+    
+ }
+ 
+  .Minotaur {
+    position: fixed;
+    width: 20%;
+    height: auto;
+    z-index: 10;
+    top: 15%;
+    left: 40%;
+    -webkit-animation: fadeinout 2s linear forwards;
+    animation: fadeinout 6s linear forwards;
+    opacity: 0;
+  }
+ 
+  
+  @keyframes fadeinout {
+    50% { opacity: 1; }
+  }
+  
+ 
+ 
+  .prompt{
+    background-color: rgba(204, 255, 255, 1);
+    padding: -10px;
+    position:absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    margin-left: 125px;
+    margin-right: 20px;
+    width: 75%;
+    border-width: 40px;
+    border-style: solid; 
+    border-image-source: url(border.png); 
+    border-image-slice: 120 fill; 
+    border-image-repeat: round;
+    animation: fadeOut 0s forwards, fadeIn 2s forwards 10s;
+    border-radius: 10px;
+  }
+ 
+  .text{
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 00px;
+    
+ 
+  }
+ 
+  .options{
+    display: flex;
+    margin-left: 30px;
+  }
+ 
+  button{
+    margin: 10px;
+    padding: 25px;
+    font-size:20px;
+    text-align:center;
+    text-decoration:none;
+    border-radius: 10px;
+    background-color: #FFCC00;
+  }
+ 
+ 
